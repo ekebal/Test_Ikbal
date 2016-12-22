@@ -1,0 +1,124 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<MovieApp.Models.Movie>>" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+	<title>Index</title>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+
+    <h2>Index</h2>
+
+    <table>
+        <tr>
+            <th></th>
+            <th>
+                Id
+            </th>
+            <th>
+                Author
+            </th>
+            <th>
+                Categorie
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Sujet
+            </th>
+            <th>
+                Message
+            </th>
+            <th>
+                Etat Visible
+            </th>
+         
+        </tr>
+
+    <% foreach (var item in Model) { %>
+
+        <tr>
+            <td>
+                <%= Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) %> |
+                <%= Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ })%>
+            </td>
+            <td>
+                <%= Html.Encode(item.Id) %>
+            </td>
+            <td>
+                <%= Html.Encode(item.Author) %>
+            </td>
+            <td>
+                <%= Html.Encode(item.Categorie) %>
+            </td>
+            <td>
+                <%= Html.Encode(item.Date) %>
+            </td>
+            <td>
+                <%= Html.Encode(item.Sujet) %>
+            </td>
+            <td>
+                <%= Html.Encode(item.Message) %>
+            </td>
+            <td>
+                <%= Html.Encode(item.EtatVisibl) %>
+            </td>
+        </tr>
+
+    <% } %>
+
+    </table>
+
+    <p>
+        <%= Html.ActionLink("Create New", "Create") %>
+    </p>
+
+    <h2>Create</h2>
+
+    <%= Html.ValidationSummary() %>
+
+    <% using (Html.BeginForm()) {%>
+
+    <fieldset>
+        <legend>Fields</legend>
+        <p>
+            <label for="Id">Id:</label>
+            <%= Html.TextBox("Id") %>
+            <%= Html.ValidationMessage("Id", "*") %>
+        </p>
+        <p>
+            <label for="Title">Author:</label>
+            <%= Html.TextBox("Title") %>
+            <%= Html.ValidationMessage("Title", "*") %>
+        </p>
+        <p>
+            <label for="Director">Categorie:</label>
+            <%= Html.TextBox("Categorie") %>
+            <%= Html.ValidationMessage("Categorie", "*") %>
+        </p>
+        <p>
+            <label for="DateReleased">Date</label>
+            <%= Html.TextBox("DateReleased") %>
+            <%= Html.ValidationMessage("DateReleased", "*") %>
+        </p>
+        <p>
+            <label for="DateReleased">Sujet</label>
+            <%= Html.TextBox("Suejt") %>
+            <%= Html.ValidationMessage("Sujet", "*") %>
+        </p>
+        <p>
+            <label for="DateReleased">Message</label>
+            <%= Html.TextBox("Message") %>
+            <%= Html.ValidationMessage("Message", "*") %>
+        </p>
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+
+    <% } %>
+
+    <div>
+        <%=Html.ActionLink("Back to List", "Index") %>
+</div>
+</asp:Content>

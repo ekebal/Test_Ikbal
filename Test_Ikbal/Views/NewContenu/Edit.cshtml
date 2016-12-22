@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h2>Edit</h2>
+
+    <%= Html.ValidationSummary() %>
+
+    <% using (Html.BeginForm()) {%>
+
+<fieldset>
+    <legend>Fields</legend>
+    <p>
+        <label for="Id">Id:</label>
+        <%= Html.TextBox("Id") %>
+        <%= Html.ValidationMessage("Id", "*") %>
+    </p>
+    <p>
+        <label for="Title">Author:</label>
+        <%= Html.TextBox("Title") %>
+        <%= Html.ValidationMessage("Title", "*") %>
+    </p>
+    <p>
+        <label for="Director">Categorie:</label>
+        <%= Html.TextBox("Categorie") %>
+        <%= Html.ValidationMessage("Categorie", "*") %>
+    </p>
+    <p>
+        <label for="DateReleased">Date</label>
+        <%= Html.TextBox("DateReleased") %>
+        <%= Html.ValidationMessage("DateReleased", "*") %>
+    </p>
+    <p>
+        <label for="DateReleased">Sujet</label>
+        <%= Html.TextBox("Suejt") %>
+        <%= Html.ValidationMessage("Sujet", "*") %>
+    </p>
+    <p>
+        <label for="DateReleased">Message</label>
+        <%= Html.TextBox("Message") %>
+        <%= Html.ValidationMessage("Message", "*") %>
+    </p>
+    <p>
+        <input type="submit" value="Save" />
+    </p>
+</fieldset>
+
+    <% } %>
+
+<div>
+    <%=Html.ActionLink("Back to List", "Index") %>
+</div>
