@@ -11,8 +11,7 @@ namespace Test_Ikbal.Models
         public int IDCategorie { get; set; }
         public int libelleCategorie { get; set; }
         public int IDCategorieParent { get; set; }
+        public IList<NewsCategorie> listSousCategorie { get; set; }
     }
-
-  
 }
 

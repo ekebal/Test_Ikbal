@@ -16,9 +16,4 @@ namespace Test_Ikbal.Models
         public string Message { get; set; }
         public int EtatVisible { get; set; }
     }
-
-    public class UtilisateurDBContext : DbContext
-    {
-        public DbSet<NewsContenu> NewsContenus { get; set; }
-    }
 }

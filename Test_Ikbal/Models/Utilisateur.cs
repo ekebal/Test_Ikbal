@@ -15,9 +15,5 @@ namespace Test_Ikbal.Models
         public string Telephone { get; set; }
         public bool Mail { get; set; }
     }
-    public class UtilisateurDBContext : DbContext
-    {
-        public DbSet<Utilisateur> Utilisateurs { get; set; }
-    }
 
 }
